@@ -10,6 +10,6 @@ function abrirPag(param){
     }
   }
 
-  pag.open('GET', `../${param}.html`);
+  pag.open('GET', `../pages/${param}.html`);
   pag.send();
 }
