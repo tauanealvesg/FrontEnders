@@ -1,15 +1,12 @@
+var xhr = new XMLHttpRequest();
 
-function abrirPag(param){
-  let localPag = document.getElementById('paginas');
-  let pag = new XMLHttpRequest();
-
-  pag.onreadystatechange = () =>{
-    if(pag.readyState == 4 && pag.status == 200){
-      localPag.innerHTML = pag.response;
-      
-    }
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
   }
+});
 
-  pag.open('GET', `../pages/${param}.html`);
-  pag.send();
-}
+xhr.open("GET", "https://example.api.findcep.com/v1/cep/01234000.json");
+xhr.setRequestHeader("Referer", "example.com");
+
+xhr.send();

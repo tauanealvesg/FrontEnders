@@ -1,0 +1,28 @@
+*{
+ margin: 0 !important;
+ padding: 0 !important;
+ box-sizing: border-box !important;
+ font-family: 'Share Tech', sans-serif;
+}
+
+html, body{
+ height: 100% !important;
+ background-image: url('../images/textura.png');
+}
+
+::placeholder{
+ color: white;
+}
+
+.menu-lateral{
+ background-color: #04161A;
+}
+
+.paginas .banner a{
+ background-color: #04161A;
+}
+
+form input[type="submit"]{
+ background-color: #04161A;
+ border: none;
+}
