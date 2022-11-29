@@ -1,15 +1,88 @@
-<form action="">
-  <input type="text" placeholder="NOME">
-  <input type="text" placeholder="EMAIL">
-  <input type="text" placeholder="SENHA">
-  <input type="text" placeholder="CONFIRMAÇÃO">
-  <input type="text" placeholder="RG">
-  <input type="text" placeholder="CEP">
-  <input type="text" placeholder="ESTADO">
-  <input type="text" placeholder="CIDADE">
-  <input type="text" placeholder="BAIRRO">
-  <input type="text" placeholder="RUA">
-  <input type="text" placeholder="NÚMERO">
-  <input type="text" placeholder="COMPLEMENTO">
-  <input type="submit" value="ENVIAR">
-</form>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script src="https://kit.fontawesome.com/5943701490.js" crossorigin="anonymous"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+ <title>Document</title>
+ <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="d-flex bg-dark">
+  <div class="menu-lateral text-white p-3 pt-5">
+    <div class="espaco h-25"></div>
+    <div class="buscar d-flex mb-3">
+      <div class="icone me-3"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
+      <span>Buscar...</span>
+    </div>
+    <div class="trocas d-flex mb-3">
+      <div class="icone me-3"><i class="fa-solid fa-dollar-sign"></i></div>
+      <span>Trocas</span>
+    </div>
+    <div class="notificacoes d-flex mb-3">
+      <div class="icone me-3"><i class="fa-solid fa-bell"></i></div>
+      <span>Notificações</span>
+    </div>
+    <div class="analytics d-flex mb-3">
+      <div class="icone me-3"><i class="fa-solid fa-chart-simple"></i></div>
+      <span>Analytics</span>
+    </div>
+    <div class="curtidas d-flex mb-3">
+      <div class="icone me-3"><i class="fa-solid fa-thumbs-up"></i></div>
+      <span>Curtidas</span>
+    </div>
+    <div class="saldo d-flex mb-3">
+      <div class="icone me-3"><i class="fa-solid fa-wallet"></i></div>
+      <span>Saldo</span>
+    </div>
+    <div class="buscar d-flex mt-5">
+      <span><a href="./login.html" class="text-white">Login</a></span>
+    </div>
+  </div>
+
+  <div class="direita w-100 text-white">
+    <header class="navbar navbar-expand-lg px-5 py-2">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white fs-2 fw-bold" href="/">FrontEnders</a>
+        <ul class="navbar-nav">
+          <li class="me-3"><a class="text-white" href="../index.html">HOME</a></li>
+          <li class="me-3"><a class="text-white" href="./servicos.html">SERVIÇO</a></li>
+          <li class="me-3"><a class="text-white" href="./contato.html">CONTATO</a></li>
+        </ul>
+      </div>
+    </header>
+      
+    <div class="paginas container mx-auto mt-5" id="paginas">
+      <form action="" id="form">
+        <input type="text" placeholder="NOME" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input type="text" placeholder="EMAIL" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input type="text" placeholder="SENHA" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input type="text" placeholder="CONFIRMAÇÃO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input type="text" placeholder="RG" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input id="cep" type="text" placeholder="CEP" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input id="estado" type="text" placeholder="ESTADO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input id="cidade" type="text" placeholder="CIDADE" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input id="bairro" type="text" placeholder="BAIRRO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input id="rua" type="text" placeholder="RUA" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input type="text" placeholder="NÚMERO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input type="text" placeholder="COMPLEMENTO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        <input type="submit" value="ENVIAR">
+      </form>
+    </div>
+  </div>
+</body>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="../js/landingpage.js"></script>
+  
+  <footer>
+
+  </footer>
+</html>
+
