@@ -3,17 +3,32 @@ const nome = document.getElementById('nome');
 const email = document.getElementById('email');
 const telefone = document.getElementById('telefone')
 
+
+email.addEventListener('blur', ()=>{
+  validateEmail(email.value);
+})
+
 form.addEventListener('submit', (e)=>{
   validateEmail(email.value);
   validateNome(nome.value);
-  validateTelefone(telefone.value)
+  validateTelefone(telefone.value);
 });
 
 function validateEmail(email){
  let reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
  if (!reg.test(email)){
-  alert('Insira um email válido!');
+  document.getElementById('email').classList.add('border-danger');
+  document.getElementById('email').classList.remove('border-white');
+  document.getElementById('alertEmail').classList.add('d-block');
+  document.getElementById('alertEmail').classList.remove('d-none');
+  }else{
+    document.getElementById('email').classList.add('border-white');
+    document.getElementById('email').classList.remove('border-danger');
+    document.getElementById('alertEmail').classList.add('d-none');
+    document.getElementById('alertEmail').classList.remove('d-block');
   }
+
+
 }
 
 function validateNome(nome){
