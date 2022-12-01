@@ -3,45 +3,49 @@ const nome = document.getElementById('nome');
 const email = document.getElementById('email');
 const telefone = document.getElementById('telefone')
 
+nome.addEventListener('blur', ()=>{
+  let validar = new Validate('nome', /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/, nome.value);
+
+  validar.valida();
+})
 
 email.addEventListener('blur', ()=>{
-  validateEmail(email.value);
+  let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, email.value);
+
+  validar.valida();
+})
+
+telefone.addEventListener('blur', ()=>{
+  let validar = new Validate('telefone', /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm, telefone.value);
+
+  validar.valida();
 })
 
 form.addEventListener('submit', (e)=>{
   validateEmail(email.value);
   validateNome(nome.value);
   validateTelefone(telefone.value);
-});
+  e.preventDefault();
+})
 
-function validateEmail(email){
- let reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
- if (!reg.test(email)){
-  document.getElementById('email').classList.add('border-danger');
-  document.getElementById('email').classList.remove('border-white');
-  document.getElementById('alertEmail').classList.add('d-block');
-  document.getElementById('alertEmail').classList.remove('d-none');
-  }else{
-    document.getElementById('email').classList.add('border-white');
-    document.getElementById('email').classList.remove('border-danger');
-    document.getElementById('alertEmail').classList.add('d-none');
-    document.getElementById('alertEmail').classList.remove('d-block');
+class Validate{
+  constructor(identificador, reg, variavel){
+    this.identificador = identificador;
+    this.reg = reg;
+    this.variavel = variavel;
   }
-
-
-}
-
-function validateNome(nome){
-  let reg2 = /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/
-  if (!reg2.test(nome)){
-   alert('Insira um nome válido!');
-   }
-}
-
-function validateTelefone(telefone){
-  let reg2 = /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm
-
-  if (!reg2.test(telefone)){
-   alert('Insira um telefone válido!');
-   }
+  
+  valida() {
+    if (!this.reg.test(this.variavel)){
+      document.getElementById(`${this.identificador}`).classList.add('border-danger');
+      document.getElementById(`${this.identificador}`).classList.remove('border-white');
+      document.getElementById(`alert${this.identificador}`).classList.add('d-block');
+      document.getElementById(`alert${this.identificador}`).classList.remove('d-none');
+      }else{
+        document.getElementById(`${this.identificador}`).classList.add('border-white');
+        document.getElementById(`${this.identificador}`).classList.remove('border-danger');
+        document.getElementById(`alert${this.identificador}`).classList.add('d-none');
+        document.getElementById(`alert${this.identificador}`).classList.remove('d-block');
+      }
+  }
 }

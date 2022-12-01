@@ -62,7 +62,12 @@
       
     <div class="paginas container mx-auto mt-5" id="paginas">
       <form action="" id="form">
-        <input id="email" type="text" placeholder="EMAIL" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10"><br>
+        <div class="email">
+          <div class="alert alert-danger p-2 d-none" id="alertemail" role="alert">
+            Insira um Email válido
+          </div>
+          <input type="text" placeholder="EMAIL" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
+        </div><br>
         <input type="submit" value="ENVIAR" class="px-5 py-2 text-white">
       </form>
     </div>

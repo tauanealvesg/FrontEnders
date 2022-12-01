@@ -67,8 +67,19 @@
         </div>
         <div class="direita w-50">
           <form action="" id="form">
-            <input type="text" placeholder="EMAIL" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
-            <input type="text" placeholder="SENHA" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="senha">
+            <div class="email">
+              <div class="alert alert-danger p-2 d-none" id="alertemail" role="alert">
+                Insira seu Email
+              </div>
+              <input type="text" placeholder="EMAIL" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
+            </div>
+
+            <div class="senha">
+              <div class="alert alert-danger p-2 d-none" id="alertsenha" role="alert">
+                Insira sua senha
+              </div>
+              <input type="text" placeholder="SENHA" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="senha">
+            </div>
             <input type="submit" value="ENVIAR">
             <span><a href="./recuperarsenha.html">Esqueci minha senha</a></span>
           </form>

@@ -61,12 +61,44 @@
       
     <div class="paginas container mx-auto mt-5" id="paginas">
       <form action="" id="form">
-        <input type="text" placeholder="NOME" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="nome">
-        <input type="text" placeholder="EMAIL" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
-        <input type="text" placeholder="SENHA" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="senha">
-        <input type="text" placeholder="CONFIRMAÇÃO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="confirmacao">
+        <div class="nome">
+          <div class="alert alert-danger p-2 d-none" id="alertnome" role="alert">
+            Insira um Nome válido
+          </div>
+          <input type="text" placeholder="NOME" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="nome">
+        </div>
+
+        <div class="email">
+          <div class="alert alert-danger p-2 d-none" id="alertemail" role="alert">
+            Insira um Email válido
+          </div>
+          <input type="text" placeholder="EMAIL" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
+        </div>
+        
+        <div class="senha">
+          <div class="alert alert-danger p-2 d-none" id="alertsenha" role="alert">
+            Insira uma senha válido
+          </div>
+          <input type="text" placeholder="SENHA" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="senha">
+        </div>
+
+        <div class="confirmacao">
+          <div class="alert alert-danger p-2 d-none" id="alertconfirmacao" role="alert">
+            Suas senhas estão diferentes
+          </div>
+          <input type="text" placeholder="CONFIRMAÇÃO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="confirmacao">
+        </div>
+
         <input type="text" placeholder="RG" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="rg">
-        <input id="cep" type="text" placeholder="CEP" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+
+        <div class="cep">
+          <div class="alert alert-danger p-2 d-none" id="alertcep" role="alert">
+            Insira um cep válido!
+          </div>
+          <input id="cep" type="text" placeholder="CEP" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+        </div>
+
+        
         <input id="estado" type="text" placeholder="ESTADO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
         <input id="cidade" type="text" placeholder="CIDADE" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
         <input id="bairro" type="text" placeholder="BAIRRO" class="w-50 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
