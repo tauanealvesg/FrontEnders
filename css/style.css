@@ -6,8 +6,11 @@
 }
 
 html, body{
- height: 100% !important;
- background-image: url('../images/textura.png');
+ height: 100%;
+}
+
+.interno{
+  background-image: url('../images/textura.png');
 }
 
 ::placeholder{
@@ -25,4 +28,13 @@ html, body{
 form input[type="submit"]{
  background-color: #04161A;
  border: none;
+}
+
+footer{
+  background-color: #04161A;
+}
+
+footer img{
+  width: 30px;
+  cursor: pointer;
 }

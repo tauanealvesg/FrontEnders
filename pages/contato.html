@@ -16,83 +16,86 @@
  <script src="./js/index.js"></script>
  <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="d-flex bg-dark">
-  <div class="menu-lateral text-white p-3 pt-5">
-    <div class="espaco h-25"></div>
-    <div class="buscar d-flex mb-3">
-      <div class="icone me-3"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
-      <span>Buscar...</span>
-    </div>
-    <div class="trocas d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-dollar-sign"></i></div>
-      <span>Trocas</span>
-    </div>
-    <div class="notificacoes d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-bell"></i></div>
-      <span>Notificações</span>
-    </div>
-    <div class="analytics d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-chart-simple"></i></div>
-      <span>Analytics</span>
-    </div>
-    <div class="curtidas d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-thumbs-up"></i></div>
-      <span>Curtidas</span>
-    </div>
-    <div class="saldo d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-wallet"></i></div>
-      <span>Saldo</span>
-    </div>
-    <div class="buscar d-flex mt-5">
-      <span><a href="./login.html" class="text-white">Login</a></span>
-    </div>
-  </div>
-
-  <div class="direita w-100 text-white">
-    <header class="navbar navbar-expand-lg px-5 py-2">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white fs-2 fw-bold" href="../index.html">FrontEnders</a>
-        <ul class="navbar-nav">
-          <li class="me-3"><a class="text-white" href="../index.html" >HOME</a></li>
-          <li class="me-3"><a class="text-white" href="./servicos.html">SERVIÇO</a></li>
-          <li class="me-3"><a class="text-white" href="/">CONTATO</a></li>
-        </ul>
+<body>
+  <div class="interno d-flex bg-dark py-5">
+    <div class="menu-lateral text-white p-3 pt-5">
+      <div class="espaco h-25"></div>
+      <div class="buscar d-flex mb-3">
+        <div class="icone me-3"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
+        <span>Buscar...</span>
       </div>
-    </header>
-      
-    <div class="paginas container mx-auto mt-5" id="paginas">
-      <div class="contato">
-        <div class="d-flex">
-          <div class="esquerda w-50">
-            <h2>FALE CONOSCO</h2>
-          </div>
-          <div class="direita w-50">
-            <form action="" id="form">
-              <div class="nome">
-                <div class="alert alert-danger p-2 d-none" id="alertnome" role="alert">
-                  Insira um Nome válido
+      <div class="trocas d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-dollar-sign"></i></div>
+        <span>Trocas</span>
+      </div>
+      <div class="notificacoes d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-bell"></i></div>
+        <span>Notificações</span>
+      </div>
+      <div class="analytics d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-chart-simple"></i></div>
+        <span>Analytics</span>
+      </div>
+      <div class="curtidas d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-thumbs-up"></i></div>
+        <span>Curtidas</span>
+      </div>
+      <div class="saldo d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-wallet"></i></div>
+        <span>Saldo</span>
+      </div>
+      <div class="buscar d-flex mt-5">
+        <span><a href="./login.html" class="text-white">Login</a></span>
+      </div>
+    </div>
+  
+    <div class="direita w-100 text-white">
+      <header class="navbar navbar-expand-lg px-5 py-2">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white fs-2 fw-bold" href="../index.html">FrontEnders</a>
+          <ul class="navbar-nav">
+            <li class="me-3"><a class="text-white" href="../index.html" >HOME</a></li>
+            <li class="me-3"><a class="text-white" href="./servicos.html">SERVIÇO</a></li>
+            <li class="me-3"><a class="text-white" href="/">CONTATO</a></li>
+          </ul>
+        </div>
+      </header>
+        
+      <div class="paginas container mx-auto mt-5" id="paginas">
+        <div class="contato">
+          <div class="d-flex align-items-center">
+            <div class="esquerda w-50">
+              <h2>FALE CONOSCO</h2>
+              <img src="../images/fale.png" alt="">
+            </div>
+            <div class="direita w-50">
+              <form action="" id="form">
+                <div class="nome">
+                  <div class="alert alert-danger p-2 d-none" id="alertnome" role="alert">
+                    Insira um Nome válido
+                  </div>
+                  <input type="text" placeholder="NOME" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="nome">
                 </div>
-                <input type="text" placeholder="NOME" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="nome">
-              </div>
-              
-              <div class="email">
-                <div class="alert alert-danger p-2 d-none" id="alertemail" role="alert">
-                  Insira um Email válido
+                
+                <div class="email">
+                  <div class="alert alert-danger p-2 d-none" id="alertemail" role="alert">
+                    Insira um Email válido
+                  </div>
+                  <input type="text" placeholder="EMAIL" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
                 </div>
-                <input type="text" placeholder="EMAIL" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
-              </div>
-
-              <div class="telefone">
-                <div class="alert alert-danger p-2 d-none" id="alerttelefone" role="alert">
-                  Insira um Telefone válido
+  
+                <div class="telefone">
+                  <div class="alert alert-danger p-2 d-none" id="alerttelefone" role="alert">
+                    Insira um Telefone válido
+                  </div>
+                  <input type="text" placeholder="TELEFONE" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="telefone">
                 </div>
-                <input type="text" placeholder="TELEFONE" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="telefone">
-              </div>
-              
-              <input type="text" placeholder="ASSUNTO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-              <textarea name="" id="" cols="30" rows="10" placeholder="MENSAGEM" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10"></textarea>
-              <input type="submit" value="ENVIAR" class="px-5 py-2 text-white">
-            </form>
+                
+                <input type="text" placeholder="ASSUNTO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+                <textarea name="" id="" cols="30" rows="10" placeholder="MENSAGEM" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10"></textarea>
+                <input type="submit" value="ENVIAR" class="px-5 py-2 text-white">
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -100,9 +103,44 @@
   </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="../js/contato.js"></script>     
-     <footer>
-    
-     </footer>
+<script src="../js/contato.js"></script>
+<footer>
+  <div class="container mx-auto d-flex text-white py-3 align-items-center">
+    <div class="esquerda w-50 d-flex justify-content-around">
+      <div class="diego">
+        <div class="sob">
+          <img src="../images/GitHub.png" alt="" onclick="location.href='https://github.com/Diego-Fernando-Reis'">
+          <img src="../images/LinkedIn.png" alt="" onclick="location.href='https://www.linkedin.com/in/diego-dvlopr/'">
+          <img src="../images/WhatsApp.png" alt="" onclick="location.href='https://api.whatsapp.com/send?1=pt_BR&phone=5521967554477'">
+        </div>
+        <div class="sub">
+          <p>Diego Fernando</p>
+        </div>
+      </div>
+      <div class="tauane">
+        <div class="sob">
+          <img src="../images/GitHub.png" alt="" onclick="location.href='https://github.com/tauanealvesg'">
+          <img src="../images/LinkedIn.png" alt="" onclick="location.href='https://www.linkedin.com/in/tauanealvesg'">
+          <img src="../images/WhatsApp.png" alt="" onclick="location.href='https://api.whatsapp.com/send?1=pt_BR&phone=5521967167400'">
+        </div>
+        <div class="sub">
+          <p>Tauane Alves</p>
+        </div>
+      </div>
+      <div class="brandon">
+        <div class="sob">
+          <img src="../images/GitHub.png" alt="" onclick="location.href='https://github.com/Diego-Fernando-Reis'">
+          <img src="../images/LinkedIn.png" alt="" onclick="location.href='https://www.linkedin.com/in/diego-dvlopr/'">
+          <img src="../images/WhatsApp.png" alt="" onclick="location.href='https://api.whatsapp.com/send?1=pt_BR&phone=5521967554477'">
+        </div>
+        <div class="sub">
+          <p>Brandon</p>
+        </div>
+      </div>
+    </div>
+    <div class="direita w-50 text-center">
+      <p>Copyright FrontEnders todos os Direitos reservados</p>
+    </div>
   </div>
+</footer>
 </html>
