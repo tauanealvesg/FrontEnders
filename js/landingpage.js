@@ -9,7 +9,6 @@ const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const confirmacao = document.getElementById('confirmacao');
 
-
 var xhr = new XMLHttpRequest();
 
 cep.addEventListener('blur', ()=>{
@@ -29,38 +28,42 @@ cep.addEventListener('blur', ()=>{
   xhr.send();
 })
 
+nome.addEventListener('blur', ()=>{
+  let validar = new Validate('nome', /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/, nome.value);
+
+  validar.valida();
+})
+
+email.addEventListener('blur', ()=>{
+  let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, email.value);
+
+  validar.valida();
+})
+
+cep.addEventListener('blur', ()=>{
+  let validar = new Validate('cep', /^[0-9]{5}-[0-9]{3}$/, cep.value);
+
+  validar.valida();
+})
+
+senha.addEventListener('blur', ()=>{
+  let validar = new Validate('senha', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/, senha.value);
+
+  validar.valida();
+})
+
+confirmacao.addEventListener('blur', ()=>{
+  validateConfirmacao(confirmacao.value, senha.value)
+})
+
 form.addEventListener('submit', (e) =>{
   validateEmail(email.value);
   validateNome(nome.value);
   validateCep(cep.value);
   validateSenha(senha.value);
   validateConfirmacao(confirmacao.value, senha.value);
-  alert(text);
+  e.preventDefault();
 })
-
-let text = '';
-
-function validateEmail(email){
-  let reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-  if (!reg.test(email)){
-   text = text + 'Insira um email válido \n'
-   }
- }
- 
- function validateNome(nome){
-   let reg2 = /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/
-   if (!reg2.test(nome)){
-    text = text + 'Insira um nome válido \n'
-    }
- }
- 
- function validateCep(cep){
-   let reg2 = /^[0-9]{5}-[0-9]{3}$/
- 
-   if (!reg2.test(cep)){
-    text = text + 'Insira um cep válido \n'
-    }
- }
 
 /*8 caracteres no mínimo
 1 Letra Maiúscula no mínimo
@@ -68,16 +71,38 @@ function validateEmail(email){
 1 Símbolo no mínimo: $*&@#
 Se der, também não permitir sequência igual (aa, bb, 44, etc)*/
 
-function validateSenha(senha){
-  let reg2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
-
-  if (!reg2.test(senha)){
-   text = text + 'Insira uma senha válida! \n'
-   }
-}
-
 function validateConfirmacao(confirmacao, senha){
     if (confirmacao != senha){
-      text = text + 'As senhas não são iguais \n'
-   }
+      document.getElementById('confirmacao').classList.add('border-danger');
+      document.getElementById('confirmacao').classList.remove('border-white');
+      document.getElementById('alertconfirmacao').classList.add('d-block');
+      document.getElementById('alertconfirmacao').classList.remove('d-none');
+    }else{
+      document.getElementById('confirmacao').classList.add('border-white');
+      document.getElementById('confirmacao').classList.remove('border-danger');
+      document.getElementById('alertconfirmacao').classList.add('d-none');
+      document.getElementById('alertconfirmacao').classList.remove('d-block');
+    }
+}
+
+class Validate{
+  constructor(identificador, reg, variavel){
+    this.identificador = identificador;
+    this.reg = reg;
+    this.variavel = variavel;
+  }
+  
+  valida() {
+    if (!this.reg.test(this.variavel)){
+      document.getElementById(`${this.identificador}`).classList.add('border-danger');
+      document.getElementById(`${this.identificador}`).classList.remove('border-white');
+      document.getElementById(`alert${this.identificador}`).classList.add('d-block');
+      document.getElementById(`alert${this.identificador}`).classList.remove('d-none');
+      }else{
+        document.getElementById(`${this.identificador}`).classList.add('border-white');
+        document.getElementById(`${this.identificador}`).classList.remove('border-danger');
+        document.getElementById(`alert${this.identificador}`).classList.add('d-none');
+        document.getElementById(`alert${this.identificador}`).classList.remove('d-block');
+      }
+  }
 }
