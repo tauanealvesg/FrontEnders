@@ -1,51 +1,67 @@
-const form = document.getElementById('form');
-const nome = document.getElementById('nome');
-const email = document.getElementById('email');
-const telefone = document.getElementById('telefone')
+$(document).ready(function(){
+  const form = $('#form');
+  const nome = $('#nome');
+  const email = $('#email');
+  const telefone = $('#telefone')
 
-nome.addEventListener('blur', ()=>{
-  let validar = new Validate('nome', /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/, nome.value);
+  nome.blur(()=>{
+    let validar = new Validate('nome', /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/, nome.val());
 
-  validar.valida();
-})
+    validar.valida();
+  })
 
-email.addEventListener('blur', ()=>{
-  let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, email.value);
+  email.blur(()=>{
+    let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, email.val());
 
-  validar.valida();
-})
+    validar.valida();
+  })
 
-telefone.addEventListener('blur', ()=>{
-  let validar = new Validate('telefone', /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm, telefone.value);
+  telefone.blur( ()=>{
+    let validar = new Validate('telefone', /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm, telefone.val());
 
-  validar.valida();
-})
+    validar.valida();
+  })
 
-form.addEventListener('submit', (e)=>{
-  validateEmail(email.value);
-  validateNome(nome.value);
-  validateTelefone(telefone.value);
-  e.preventDefault();
-})
+  form.submit( (e)=>{
+    let reg = /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/
+    let reg2 = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+    let reg3 = /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm
+    
 
-class Validate{
-  constructor(identificador, reg, variavel){
-    this.identificador = identificador;
-    this.reg = reg;
-    this.variavel = variavel;
-  }
+    if(reg.test($('#nome').val()) && reg2.test($('#email').val()) && reg3.test($('#telefone').val())){
+      alert('Você está cadastrado!');
+    }else{
+      e.preventDefault();
   
-  valida() {
-    if (!this.reg.test(this.variavel)){
-      document.getElementById(`${this.identificador}`).classList.add('border-danger');
-      document.getElementById(`${this.identificador}`).classList.remove('border-white');
-      document.getElementById(`alert${this.identificador}`).classList.add('d-block');
-      document.getElementById(`alert${this.identificador}`).classList.remove('d-none');
-      }else{
-        document.getElementById(`${this.identificador}`).classList.add('border-white');
-        document.getElementById(`${this.identificador}`).classList.remove('border-danger');
-        document.getElementById(`alert${this.identificador}`).classList.add('d-none');
-        document.getElementById(`alert${this.identificador}`).classList.remove('d-block');
-      }
+      let validar = new Validate('nome', /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/, nome.val());
+
+      validar.valida();
+
+      let validar2 = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, email.val());
+
+      validar2.valida();
+
+      let validar3 = new Validate('telefone', /^1\d\d(\d\d)?$|^0800 ?\d{3} ?\d{4}$|^(\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4}$/gm, telefone.val());
+
+      validar3.valida();
+    }
+  })
+
+  class Validate{
+    constructor(identificador, reg, variavel){
+      this.identificador = identificador;
+      this.reg = reg;
+      this.variavel = variavel;
+    }
+    
+    valida() {
+      if (!this.reg.test(this.variavel)){
+        $(`#${this.identificador}`).addClass('border-danger').removeClass('border-white');
+        $(`#alert${this.identificador}`).addClass('d-block').removeClass('d-none');
+        }else{
+          $(`#${this.identificador}`).addClass('border-white').removeClass('border-danger');
+          $(`#alert${this.identificador}`).addClass('d-none').removeClass('d-block');
+        }
+    }
   }
-}
+});

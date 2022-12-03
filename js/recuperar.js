@@ -1,18 +1,26 @@
 const form = document.getElementById('form');
 const email = document.getElementById('email');
 
-form.addEventListener('submit', (e)=>{
-  validateEmail(email.value);
-  e.preventDefault();
+$('#form').submit( (e)=>{
+  let reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+  if(reg.test($('#email').val())){
+    alert('Um email com a mudança de senha foi enviado pra você');
+  }else{
+    e.preventDefault();
+    let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, $('#email').val());
+
+    validar.valida();
+  }
 })
 
-email.addEventListener('blur', ()=>{
-  let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, email.value);
+$('#email').blur( ()=>{
+  let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, $('#email').val());
 
   validar.valida();
 })
 
- class Validate{
+class Validate{
   constructor(identificador, reg, variavel){
     this.identificador = identificador;
     this.reg = reg;
@@ -21,15 +29,11 @@ email.addEventListener('blur', ()=>{
   
   valida() {
     if (!this.reg.test(this.variavel)){
-      document.getElementById(`${this.identificador}`).classList.add('border-danger');
-      document.getElementById(`${this.identificador}`).classList.remove('border-white');
-      document.getElementById(`alert${this.identificador}`).classList.add('d-block');
-      document.getElementById(`alert${this.identificador}`).classList.remove('d-none');
+      $(`#${this.identificador}`).addClass('border-danger').removeClass('border-white');
+      $(`#alert${this.identificador}`).addClass('d-block').removeClass('d-none');
       }else{
-        document.getElementById(`${this.identificador}`).classList.add('border-white');
-        document.getElementById(`${this.identificador}`).classList.remove('border-danger');
-        document.getElementById(`alert${this.identificador}`).classList.add('d-none');
-        document.getElementById(`alert${this.identificador}`).classList.remove('d-block');
+        $(`#${this.identificador}`).addClass('border-white').removeClass('border-danger');
+        $(`#alert${this.identificador}`).addClass('d-none').removeClass('d-block');
       }
   }
 }

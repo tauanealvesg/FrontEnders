@@ -7,10 +7,14 @@
 
 html, body{
  height: 100%;
+ background-image: url('../images/textura.png');
 }
 
 .interno{
-  background-image: url('../images/textura.png');
+  
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 ::placeholder{

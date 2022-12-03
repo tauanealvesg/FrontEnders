@@ -28,41 +28,63 @@ cep.addEventListener('blur', ()=>{
   xhr.send();
 })
 
-nome.addEventListener('blur', ()=>{
-  let validar = new Validate('nome', /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/, nome.value);
+$('#nome').blur( ()=>{
+  let validar = new Validate('nome', /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/, $('#nome').val());
 
   validar.valida();
 })
 
-email.addEventListener('blur', ()=>{
-  let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, email.value);
+$('#email').blur( ()=>{
+  let validar = new Validate('email', /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, $('#email').val());
 
   validar.valida();
 })
 
-cep.addEventListener('blur', ()=>{
-  let validar = new Validate('cep', /^[0-9]{5}-[0-9]{3}$/, cep.value);
+$('#cep').blur( ()=>{
+  let validar = new Validate('cep', /^[0-9]{5}-[0-9]{3}$/, $('#cep').val());
 
   validar.valida();
 })
 
-senha.addEventListener('blur', ()=>{
-  let validar = new Validate('senha', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/, senha.value);
+$('#senha').blur( ()=>{
+  let validar = new Validate('senha', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/, $('#senha').val());
 
   validar.valida();
 })
 
-confirmacao.addEventListener('blur', ()=>{
-  validateConfirmacao(confirmacao.value, senha.value)
+$('#confirmacao').blur( ()=>{
+  validateConfirmacao($('#confirmacao').val(), $('#senha').val())
 })
 
-form.addEventListener('submit', (e) =>{
-  validateEmail(email.value);
-  validateNome(nome.value);
-  validateCep(cep.value);
-  validateSenha(senha.value);
-  validateConfirmacao(confirmacao.value, senha.value);
-  e.preventDefault();
+$('#form').submit( (e) =>{
+  let reg = /^[a-zA-Z\u00C0-\u017F´]+\s+[a-zA-Z\u00C0-\u017F´]{0,}$/
+  let reg2 = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+  let reg3 = /^[0-9]{5}-[0-9]{3}$/
+  let reg4 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/
+
+  if(reg.test($('#nome').val()) && reg2.test($('#email').val()) && reg3.test($('#cep').val()) && reg4.test($('#senha').val()) && $('#confirmacao').val() == $('#senha').val()){
+    alert('Você está cadastrado!');
+  }else{
+    e.preventDefault();
+
+    let validar = new Validate('nome', reg, $('#nome').val());
+
+    validar.valida();
+
+    let validar2 = new Validate('email', reg2,  $('#email').val());
+
+    validar2.valida();
+
+    let validar3 = new Validate('cep', reg3,  $('#cep').val());
+
+    validar3.valida();
+
+    let validar4 = new Validate('senha', reg4,  $('#senha').val());
+
+    validar4.valida();
+
+    validateConfirmacao(  $('#confirmacao').val(), $('#senha').val());
+  }
 })
 
 /*8 caracteres no mínimo
@@ -73,15 +95,11 @@ Se der, também não permitir sequência igual (aa, bb, 44, etc)*/
 
 function validateConfirmacao(confirmacao, senha){
     if (confirmacao != senha){
-      document.getElementById('confirmacao').classList.add('border-danger');
-      document.getElementById('confirmacao').classList.remove('border-white');
-      document.getElementById('alertconfirmacao').classList.add('d-block');
-      document.getElementById('alertconfirmacao').classList.remove('d-none');
+      $('#confirmacao').addClass('border-danger').removeClass('border-white');
+      $('#alertconfirmacao').addClass('d-block').removeClass('d-none');
     }else{
-      document.getElementById('confirmacao').classList.add('border-white');
-      document.getElementById('confirmacao').classList.remove('border-danger');
-      document.getElementById('alertconfirmacao').classList.add('d-none');
-      document.getElementById('alertconfirmacao').classList.remove('d-block');
+      $('#confirmacao').addClass('border-white').removeClass('border-danger');
+      $('#alertconfirmacao').addClass('d-none').removeClass('d-block');
     }
 }
 
@@ -94,15 +112,11 @@ class Validate{
   
   valida() {
     if (!this.reg.test(this.variavel)){
-      document.getElementById(`${this.identificador}`).classList.add('border-danger');
-      document.getElementById(`${this.identificador}`).classList.remove('border-white');
-      document.getElementById(`alert${this.identificador}`).classList.add('d-block');
-      document.getElementById(`alert${this.identificador}`).classList.remove('d-none');
+      $(`#${this.identificador}`).addClass('border-danger').removeClass('border-white');
+      $(`#alert${this.identificador}`).addClass('d-block').removeClass('d-none');
       }else{
-        document.getElementById(`${this.identificador}`).classList.add('border-white');
-        document.getElementById(`${this.identificador}`).classList.remove('border-danger');
-        document.getElementById(`alert${this.identificador}`).classList.add('d-none');
-        document.getElementById(`alert${this.identificador}`).classList.remove('d-block');
+        $(`#${this.identificador}`).addClass('border-white').removeClass('border-danger');
+        $(`#alert${this.identificador}`).addClass('d-none').removeClass('d-block');
       }
   }
 }
