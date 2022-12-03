@@ -15,98 +15,100 @@
  <title>Document</title>
  <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="d-flex bg-dark">
-  <div class="menu-lateral text-white p-3 pt-5">
-    <div class="espaco h-25"></div>
-    <div class="buscar d-flex mb-3">
-      <div class="icone me-3"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
-      <span>Buscar...</span>
-    </div>
-    <div class="trocas d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-dollar-sign"></i></div>
-      <span>Trocas</span>
-    </div>
-    <div class="notificacoes d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-bell"></i></div>
-      <span>Notificações</span>
-    </div>
-    <div class="analytics d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-chart-simple"></i></div>
-      <span>Analytics</span>
-    </div>
-    <div class="curtidas d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-thumbs-up"></i></div>
-      <span>Curtidas</span>
-    </div>
-    <div class="saldo d-flex mb-3">
-      <div class="icone me-3"><i class="fa-solid fa-wallet"></i></div>
-      <span>Saldo</span>
-    </div>
-    <div class="buscar d-flex mt-5">
-      <span><a href="./login.html" class="text-white">Login</a></span>
-    </div>
-  </div>
-
-  <div class="direita w-100 text-white">
-    <header class="navbar navbar-expand-lg px-5 py-2">
-      <div class="container-fluid">
-        <a class="navbar-brand text-white fs-2 fw-bold" href="/">FrontEnders</a>
-        <ul class="navbar-nav">
-          <li class="me-3"><a class="text-white" href="../index.html">HOME</a></li>
-          <li class="me-3"><a class="text-white" href="./servicos.html">SERVIÇO</a></li>
-          <li class="me-3"><a class="text-white" href="./contato.html">CONTATO</a></li>
-        </ul>
+<body>
+  <div class="interno d-flex bg-dark">
+    <div class="menu-lateral text-white p-3 pt-5">
+      <div class="espaco h-25"></div>
+      <div class="buscar d-flex mb-3">
+        <div class="icone me-3"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></div>
+        <span>Buscar...</span>
       </div>
-    </header>
-      
-    <div class="paginas container mx-auto mt-5" id="paginas">
-      <form action="" id="form" class="w-50 mx-auto">
-        <div class="nome">
-          <div class="alert alert-danger p-2 d-none" id="alertnome" role="alert">
-            Insira um Nome válido
-          </div>
-          <input type="text" placeholder="NOME" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="nome">
+      <div class="trocas d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-dollar-sign"></i></div>
+        <span>Trocas</span>
+      </div>
+      <div class="notificacoes d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-bell"></i></div>
+        <span>Notificações</span>
+      </div>
+      <div class="analytics d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-chart-simple"></i></div>
+        <span>Analytics</span>
+      </div>
+      <div class="curtidas d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-thumbs-up"></i></div>
+        <span>Curtidas</span>
+      </div>
+      <div class="saldo d-flex mb-3">
+        <div class="icone me-3"><i class="fa-solid fa-wallet"></i></div>
+        <span>Saldo</span>
+      </div>
+      <div class="buscar d-flex mt-5">
+        <span><a href="./login.html" class="text-white">Login</a></span>
+      </div>
+    </div>
+  
+    <div class="direita w-100 text-white">
+      <header class="navbar navbar-expand-lg px-5 py-2">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white fs-2 fw-bold" href="/">FrontEnders</a>
+          <ul class="navbar-nav">
+            <li class="me-3"><a class="text-white" href="../index.html">HOME</a></li>
+            <li class="me-3"><a class="text-white" href="./servicos.html">SERVIÇO</a></li>
+            <li class="me-3"><a class="text-white" href="./contato.html">CONTATO</a></li>
+          </ul>
         </div>
-
-        <div class="email">
-          <div class="alert alert-danger p-2 d-none" id="alertemail" role="alert">
-            Insira um Email válido
-          </div>
-          <input type="text" placeholder="EMAIL" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
-        </div>
+      </header>
         
-        <div class="senha">
-          <div class="alert alert-danger p-2 d-none" id="alertsenha" role="alert">
-            Insira uma senha válido
+      <div class="paginas container mx-auto mt-5" id="paginas">
+        <form action="" id="form" class="w-50 mx-auto">
+          <div class="nome">
+            <div class="alert alert-danger p-2 d-none" id="alertnome" role="alert">
+              Insira um Nome válido
+            </div>
+            <input type="text" placeholder="NOME" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="nome">
           </div>
-          <input type="text" placeholder="SENHA" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="senha">
-        </div>
-
-        <div class="confirmacao">
-          <div class="alert alert-danger p-2 d-none" id="alertconfirmacao" role="alert">
-            Suas senhas estão diferentes
+  
+          <div class="email">
+            <div class="alert alert-danger p-2 d-none" id="alertemail" role="alert">
+              Insira um Email válido
+            </div>
+            <input type="text" placeholder="EMAIL" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="email">
           </div>
-          <input type="text" placeholder="CONFIRMAÇÃO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="confirmacao">
-        </div>
-
-        <input type="text" placeholder="RG" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="rg">
-
-        <div class="cep">
-          <div class="alert alert-danger p-2 d-none" id="alertcep" role="alert">
-            Insira um cep válido!
+          
+          <div class="senha">
+            <div class="alert alert-danger p-2 d-none" id="alertsenha" role="alert">
+              Insira uma senha válido
+            </div>
+            <input type="text" placeholder="SENHA" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="senha">
           </div>
-          <input id="cep" type="text" placeholder="CEP" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-        </div>
-
-        
-        <input id="estado" type="text" placeholder="ESTADO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-        <input id="cidade" type="text" placeholder="CIDADE" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-        <input id="bairro" type="text" placeholder="BAIRRO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-        <input id="rua" type="text" placeholder="RUA" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-        <input type="text" placeholder="NÚMERO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-        <input type="text" placeholder="COMPLEMENTO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
-        <input type="submit" value="ENVIAR" class="w-50 py-2 text-white rounded-2">
-      </form>
+  
+          <div class="confirmacao">
+            <div class="alert alert-danger p-2 d-none" id="alertconfirmacao" role="alert">
+              Suas senhas estão diferentes
+            </div>
+            <input type="text" placeholder="CONFIRMAÇÃO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="confirmacao">
+          </div>
+  
+          <input type="text" placeholder="RG" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10" id="rg">
+  
+          <div class="cep">
+            <div class="alert alert-danger p-2 d-none" id="alertcep" role="alert">
+              Insira um cep válido!
+            </div>
+            <input id="cep" type="text" placeholder="CEP" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+          </div>
+  
+          
+          <input id="estado" type="text" placeholder="ESTADO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+          <input id="cidade" type="text" placeholder="CIDADE" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+          <input id="bairro" type="text" placeholder="BAIRRO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+          <input id="rua" type="text" placeholder="RUA" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+          <input type="text" placeholder="NÚMERO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+          <input type="text" placeholder="COMPLEMENTO" class="w-100 mb-2 py-2 px-1 rounded-2 border border-white border-3 bg-white bg-opacity-10">
+          <input type="submit" value="ENVIAR" class="w-50 py-2 text-white rounded-2">
+        </form>
+      </div>
     </div>
   </div>
 </body>
